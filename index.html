@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Countries</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="http://www.wallmania.be/fr/media/catalog/product/cache/13/image/650x/040ec09b1e35df139433887a97daa66f/S/p/Space_foto_0005_01_de-aarde-foto.png">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href='main.css' rel='stylesheet' type="text/css">
+    </head>
+    <body ng-app="appCountries" ng-controller="mainCtrl as main">
+        <h1>Countries all over the world</h1>
+        <div class="container">
+            <select>
+                <option ng-repeat=" country in main.data.ajax" value="{{country.code | lowercase}}">{{country.name}}</option>
+            </select>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/234px-Flag_of_Israel.svg.png" alt="country flag"/>
+        </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>
