@@ -4,7 +4,8 @@ app.controller("mainCtrl", mainCtrl);
 function mainCtrl($http){
     this.data={};
     this.data.ajax=null;
-    this.countrySelect ='India';
+   
+
     $http({
             url: 'countries.json', 
             method: "GET"
@@ -12,7 +13,7 @@ function mainCtrl($http){
             
             this.data.ajax = response.data;
     }.bind(this)); 
-
+ this.countrySelect = "il";
 };
 
 
