@@ -1,7 +1,7 @@
-var app = angular.module("appCountries",[]);
+var app = angular.module("appCountries",['ngMap']);
 app.controller("mainCtrl", mainCtrl);
 
-function mainCtrl($http){
+function mainCtrl($http,NgMap){
     this.data={};
     this.data.ajax=null;
    
@@ -14,7 +14,13 @@ function mainCtrl($http){
             this.data.ajax = response.data;
     }.bind(this)); 
     this.countrySelect = "il";
-
+     
+    this.NgMap.getMap().then(function(map) {
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
+      });
+      
 };
 
 
