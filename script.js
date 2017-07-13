@@ -13,7 +13,8 @@ function mainCtrl($http){
             
             this.data.ajax = response.data;
     }.bind(this)); 
- this.countrySelect = "il";
+    this.countrySelect = "il";
+
 };
 
 

@@ -12,10 +12,10 @@
     <body ng-app="appCountries" ng-controller="mainCtrl as main">
         <h1>Countries all over the world</h1>
         <div class="container" >
-            <select ng-model="main.countrySelect"  >
+            <select ng-model="main.countrySelect">
                 <option  ng-repeat="country in main.data.ajax" value="{{country.code | lowercase}}"  >{{country.name}}</option>
             </select>
-            <img ng-src='https://flagpedia.net/data/flags/normal/{{main.countrySelect}}.png' alt="country flag"/>
+            <img ng-src='http://www.geonames.org/flags/m/{{main.countrySelect}}.png' alt="country flag"/>
             <h2>{{main.countrySelect}}</h2>
         </div>
         
