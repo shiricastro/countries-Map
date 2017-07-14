@@ -1,29 +1,27 @@
 var app = angular.module("appCountries",['ngMap']);
 app.controller("mainCtrl", mainCtrl);
 
-function mainCtrl($http,NgMap){
-    this.data={};
-    this.data.ajax=null;
+function mainCtrl($http){
+    this.countrySelect = {};
+    this.countrySelect.name= "Israel";
    
-
+    this.data=[];  
     $http({
             url: 'countries.json', 
             method: "GET"
-    }).then(function (response) {
-            
-            this.data.ajax = response.data;
-    }.bind(this)); 
-    this.countrySelect = "il";
+    }).then(function (response) {           
+            this.data = response.data;
+    }.bind(this));
+    
+
+    this.chosenCode ="il";
+    this.chosenCountry = function(){
+        this.chosenCode = this.data.find(function(c){
+           return c.name === this.countrySelect.name; 
+        }.bind(this)).code;
+    };
      
-    this.NgMap.getMap().then(function(map) {
-        console.log(map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
-      });
       
 };
 
 
-
-//http://www.geonames.org/flags/m/
-//http://www.geonames.org/flags/m/ag.png

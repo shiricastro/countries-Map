@@ -10,7 +10,16 @@ body{
 
 img{
     width: 40px;
+    height: 24px;
     vertical-align: top;
+}
+div.map{
+    margin-top:1rem;
+}
+@media (max-width:350px){
+    h1{
+        font-size: 20px;
+    }
 }
 
 
